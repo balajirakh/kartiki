@@ -64,5 +64,29 @@ class UserServiceimplTest {
 		
 		
 	}
+@Test
+	public void updateUserTest() {
+		
+		
+		Integer userid = 8;
+		UserDto userDto=new UserDto();
+		
+		
+		
+		userDto.setAbout("i am a docter");
+		userDto.setEmail("v@gmail.com");
+		userDto.setName("vaibhav");
+		userDto.setPassword("bdbvgvdvv");
+		
+		Mockito.when(userRepository.findById(Mockito.anyInt())).thenReturn(Optional.of(user));
+		Mockito.when(userRepository.save(Mockito.any())).thenReturn(userDto);
+		
+	UserDto updateUser = userserviceI.updateUser(userDto, userid);
+	
+	assertEquals(userDto.getName(), updateUser.getName());
+		
+		
+		
+	}
 
 }
