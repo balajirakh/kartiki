@@ -65,7 +65,7 @@ class UserServiceimplTest {
 		
 	}
 @Test
-	public void updateUserTest() {
+	public void QAupdateUserTest() {
 		
 		
 		Integer userid = 8;
